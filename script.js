@@ -9,7 +9,7 @@ function loadData() {
   let c = Number(getCookie("clicks"));
   let t = Number(getCookie("time"));
   letters = getCookie("letters").split("");
-  document.getElementById("mistakes").innerHTML = "mistakes:" + (m/(m+c)).toFixed(2);  
+  document.getElementById("mistakes").innerHTML = "mistakes(per 100c):" + ((m*100)/(m+c)).toFixed(2);  
   document.getElementById("acpm").innerHTML = "cpm:" + (c*60*1000/t).toFixed(2);
   var tesdf = letters.toString();
   if(!(tesdf === "")){
