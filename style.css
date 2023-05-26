@@ -1,0 +1,156 @@
+
+html{
+  background-color: black;
+  color: white;
+  font-size: 25px;
+}
+p {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#select{
+  width: 600px;
+  margin: auto;
+}
+
+#selected{
+  height: 40px;
+  padding-right: 20px;
+  display: inline-block;
+  background-color: black;
+
+}
+
+#selected span {
+  height: 14px;
+  margin-left: 0px;
+  margin-bottom: -1px;
+  width: 10px;
+  background: white;
+  opacity: 0;
+  display: inline-block;
+  animation: blink 1s linear infinite alternate;
+}
+
+@keyframes blink {
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#button{
+  text-align:right;
+}
+.action{
+  width: 100px;
+  font-size:20px;
+  margin: auto; 
+  cursor: pointer; 
+}
+
+
+.write {
+  background-color: #555555;
+}
+.done {
+  color: green;
+}
+.false {
+  color: red;
+}
+span{
+  padding-top: 2px;  
+  padding-bottom: 2px;
+}
+#main{
+  width: 600px;
+  margin: auto;
+  padding-top: 100px;
+  display: none;
+  text-align: center;
+}
+
+
+.float{
+  display: flex;
+  position: absolute;
+  right: 20px;
+  justify-content: right;
+}
+#timer{
+  top: 140px;
+}
+#cpmer{
+  top: 180px;
+}
+#counter{
+  top: 220px;
+  color: red;
+}
+#end{
+  top: 290px;
+}
+
+#wrap {  
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 99%;
+  justify-content: center;
+}
+
+ #keyboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+.holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.shift {
+  width: 120px;
+}
+
+.backspace {
+  width: 80px;
+}
+
+.enter {
+  width: 80px;
+}
+
+.space {
+  width: 350px;
+}
+
+.key.active {
+  background-color: #bbb;
+}
