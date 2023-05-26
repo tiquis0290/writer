@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadData()">
+
+<div id="main">
+  <div id="texts">
+    
+  </div>
+  <div class="float" id="timer"><p>time:</p><p id="time">0</p></div>
+  <div class="float" id="cpmer"><p>cpm:</p><p id="cpm">0</p></div>
+  <div class="float" id="counter"><p>mistakes:</p><p id="count">0</p></div>
+  <div class="float" id="end"><button class="action" onclick="end();">end</button></div>
+  <div id="wrap">
+    <div id="keyboard">
+      <div class="row">
+        <div class="key" data-key="81">Q</div>
+        <div class="key" data-key="87">W</div>
+        <div class="key" data-key="69">E</div>
+        <div class="key" data-key="82">R</div>
+        <div class="key" data-key="84">T</div>
+        <div class="key" data-key="89">Y</div>
+        <div class="key" data-key="85">U</div>
+        <div class="key" data-key="73">I</div>
+        <div class="key" data-key="79">O</div>
+        <div class="key" data-key="80">P</div>
+      </div>
+      <div class="row">
+        <div class="key" data-key="65">A</div>
+        <div class="key" data-key="83">S</div>
+        <div class="key" data-key="68">D</div>
+        <div class="key" data-key="70">F</div>
+        <div class="key" data-key="71">G</div>
+        <div class="key" data-key="72">H</div>
+        <div class="key" data-key="74">J</div>
+        <div class="key" data-key="75">K</div>
+        <div class="key" data-key="76">L</div>
+      </div>
+      <div class="row">
+        <div class="key" data-key="90">Z</div>
+        <div class="key" data-key="88">X</div>
+        <div class="key" data-key="67">C</div>
+        <div class="key" data-key="86">V</div>
+        <div class="key" data-key="66">B</div>
+        <div class="key" data-key="78">N</div>
+        <div class="key" data-key="77">M</div>
+        <div class="holder" data-key=""></div>
+      </div>
+      <div class="row">
+        <div class="key space" data-key="32"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="select">
+  <p>Write down letters, which do you want to practice:</p>
+  <p id="selected"><span></span></p>
+  <p id="button"><button class="action" onclick="start();">start</button></p>
+  <p id="mistakes"></p>
+  <p id="acpm"></p>
+  <p id="button"><button class="action" onclick="reset();">reset</button></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
