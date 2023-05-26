@@ -9,7 +9,7 @@ function loadData() {
   let c = Number(getCookie("clicks"));
   let t = Number(getCookie("time"));
   letters = getCookie("letters").split("");
-  document.getElementById("mistakes").innerHTML = "mistakes(per 100c):" + ((m*100)/(m+c)).toFixed(2);  
+  document.getElementById("mistakes").innerHTML = "mistakes(per 100c):" + ((m*100)/(m+c)).toFixed(2);
   document.getElementById("acpm").innerHTML = "cpm:" + (c*60*1000/t).toFixed(2);
   var tesdf = letters.toString();
   if(!(tesdf === "")){
@@ -41,18 +41,20 @@ function start(){
 
 function end(){
   document.getElementById("main").style.display = "none";
-  let m = Number(getCookie("mistakes")) + mistake;
-  setCookie("mistakes",m,999);
-  let c = Number(getCookie("clicks")) + click;
-  setCookie("clicks",c,999);
-  let t = Number(getCookie("time")) + time;
-  setCookie("time",t,999);
-  var i = 0;
-  var parent = document.getElementById("texts");
-  while(i < Math.floor((max-1)/mn)+1){
-    parent.removeChild(parent.lastChild);
-    i++;
-  }  
+  if(!(time === 0)){
+    let m = Number(getCookie("mistakes")) + mistake;
+    setCookie("mistakes",m,999);
+    let c = Number(getCookie("clicks")) + click;
+    setCookie("clicks",c,999);
+    let t = Number(getCookie("time")) + time;
+    setCookie("time",t,999);
+    var i = 0;
+    var parent = document.getElementById("texts");
+    while(i < Math.floor((max-1)/mn)+1){
+      parent.removeChild(parent.lastChild);
+      i++;
+    }  
+  }
   loadData();
   document.getElementById("select").style.display = "block";
   writing = false;
@@ -178,7 +180,10 @@ function higlight(){
 }
 
 function keyPressed(event) {
-  if(writing && characterIndex < max){
+  if(writing && event.keyCode===27){
+    setTimeout(end, 100);
+  }
+  else if(writing && characterIndex < max){
     if(characterIndex === 0 && startTime === 0){
       startTime = Date.now();
     }
