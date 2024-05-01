@@ -107,7 +107,7 @@ function keyPressed2(event) {
     else if(event.keyCode === 46){ //enter
       setTimeout(reset, 100);
     }
-    else if((64 < event.keyCode && event.keyCode < 91) || 0 === 0){
+    else if((64 < event.keyCode && event.keyCode < 91)){
       var char = String.fromCharCode(event.keyCode);
       letters.concat(char)
       let first = letters.find(myFunction);
